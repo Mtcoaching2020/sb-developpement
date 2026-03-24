@@ -232,63 +232,57 @@ footer a:hover {
     box-shadow: 0 0 10px rgba(0, 149, 246, 0.5);
     transition: width 0.1s ease-out;
 }
-/* --- CONFIGURATION MOBILE (SMARTPHONE) --- */
+/* --- CONFIGURATION MOBILE (SMARTPHONE) - AJUSTEMENT DES ESPACES --- */
 @media (max-width: 768px) {
     
-    /* 1. On ajuste le Header pour que le bouton ne mange pas tout */
+    /* 1. Header : Plus fin */
     header {
-        padding: 10px 4%;
-    }
-    .logo-container img {
-        height: 35px; /* On réduit un peu le logo */
-    }
-    .nav-btn {
-        padding: 8px 16px;
-        font-size: 0.75rem; /* Bouton plus petit pour laisser de la place */
+        padding: 8px 4%; /* Encore un peu moins de hauteur */
     }
 
-    /* 2. On répare le titre qui s'écrase */
+    /* 2. Hero Section : On réduit la hauteur de la section entière */
+    .hero {
+        min-height: 70vh; /* Moins de hauteur forcée */
+        padding-top: 100px; /* Espace pour le header fixé */
+        padding-bottom: 40px; /* Moins de vide en bas */
+    }
     .hero h1 {
-        font-size: 2.2rem !important; /* Taille fixe pour mobile */
-        line-height: 1.2; /* On redonne de l'air entre les lignes */
-        letter-spacing: -1px;
+        font-size: 2.1rem !important;
+        margin-bottom: 15px; /* Moins d'espace sous le titre */
     }
 
-    /* 3. BIO : On empile au lieu de mettre côte à côte */
+    /* 3. BIO : On resserre */
+    .bio {
+        padding: 50px 5%; /* On divise par deux les espaces haut/bas (était 120px) */
+    }
     .container-bio {
-        flex-direction: column; /* Le texte en haut, l'image en bas */
-        gap: 40px;
-        text-align: center;
+        gap: 30px; /* Moins d'espace entre le texte et l'image */
     }
 
-    .bio-text {
-        order: 1; /* Le texte apparaît en premier */
-    }
-
-    .bio-img {
-        order: 2; /* L'image passe dessous */
-        width: 80%; /* Elle prend plus de place qu'actuellement */
-        margin: 0 auto;
-    }
-
-    .skills {
-        grid-template-columns: 1fr; /* Une seule colonne de compétences */
-        text-align: left;
-    }
-
-    /* 4. STATS : On les met en colonne */
+    /* 4. STATS : On resserre */
     .stats-bar {
-        flex-direction: column;
-        padding: 60px 5%;
+        padding: 40px 5%; /* On réduit le vide (était 100px) */
+        gap: 20px; /* Moins d'espace entre chaque chiffre */
     }
 
-    /* 5. OFFRES : On ajuste la grille */
+    /* 5. OFFRES : On resserre */
+    .offres {
+        padding: 50px 5%; /* On réduit le vide (était 120px) */
+    }
     .grid-offres {
-        grid-template-columns: 1fr; /* Une seule carte par ligne */
+        margin-top: 30px; /* Moins d'espace après le titre de section */
         gap: 20px;
     }
-    
     .card-offre {
-        padding: 40px 25px; /* Un peu moins de vide interne */
+        padding: 30px 20px; /* Cartes plus compactes */
+    }
+    .icon-offre {
+        width: 60px; /* Icones un peu plus petites */
+        margin-bottom: 20px;
+    }
+
+    /* 6. Footer : Moins de vide */
+    footer {
+        padding: 40px 5%; /* Moins d'espace (était 80px) */
     }
 }
