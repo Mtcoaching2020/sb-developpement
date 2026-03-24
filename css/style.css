@@ -1,0 +1,234 @@
+/* DESIGN GLOBAL & CHARTE GRAPHIQUE SP DÉVELOPPEMENT */
+:root {
+    --couleur-principale: #0095f6; 
+    --couleur-sombre: #0F1115;
+    --noir-graphite: #1a1a1a; /* Ajouté */
+    --blanc-cassé: #F4F1EA;
+    --gris-text: #4A4A4A;
+    --beige-sable: #D2B48C; /* Ajouté pour tes sous-titres */
+    --transition-smooth: all 0.3s ease; /* Ajouté pour tes animations */
+}
+
+/* Mise à jour automatique des éléments clés */
+h1, h2, .highlight { color: var(--couleur-principale); }
+.nav-btn { background-color: var(--couleur-principale); color: white; border: none; }
+.cta-whatsapp { border: 2px solid var(--couleur-principale); color: var(--couleur-principale); }
+.cta-whatsapp:hover { background-color: var(--couleur-principale); color: white; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: var(--couleur-sombre); /* On met un fond sombre par défaut */
+    color: white; 
+    line-height: 1.6; 
+    overflow-x: hidden; 
+}
+
+/* ANIMATIONS DE RÉVÉLATION (CORRIGÉES) */
+.reveal { 
+    opacity: 1; /* On force à 1 pour que ce soit visible tout de suite */
+    transform: none; 
+}
+
+/* On garde quand même l'animation pour plus tard */
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.active { 
+    animation: fadeIn 0.8s ease forwards; 
+}
+
+/* HEADER PREMIUM */
+header { 
+    background: rgba(15, 17, 21, 0.98); 
+    backdrop-filter: blur(12px);
+    padding: 12px 5%; 
+    display: flex; justify-content: space-between; align-items: center; 
+    position: fixed; width: 100%; top: 0; z-index: 1000; 
+    border-bottom: 1px solid rgba(0, 149, 246, 0.3); 
+}
+.logo-container img { height: 45px; width: auto; }
+
+.nav-btn { 
+    background: var(--couleur-principale); 
+    color: white; 
+    padding: 12px 24px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    border-radius: 2px; 
+    transition: var(--transition-smooth); 
+}
+.nav-btn:hover { background: white; color: var(--couleur-principale); }
+
+/* HERO SECTION */
+.hero { 
+    height: 90vh; 
+    background: var(--noir-graphite); 
+    color: white; 
+    display: flex; flex-direction: column; 
+    justify-content: center; align-items: center; 
+    text-align: center; padding: 0 5%; 
+}
+.hero h1 { font-size: clamp(2.2rem, 8vw, 4.5rem); text-transform: uppercase; font-weight: 900; line-height: 1; margin-bottom: 25px; letter-spacing: -2px; }
+.hero span { color: var(--couleur-principale); }
+.hero p { font-size: 1.1rem; max-width: 700px; color: var(--beige-sable); font-weight: 300; text-transform: uppercase; }
+
+/* BIO - Mise en page Texte à gauche / Photo à droite */
+.bio { 
+    padding: 120px 5%; 
+    background: var(--blanc-cassé); /* On utilise ta variable */
+    color: var(--gris-text); /* On force un gris foncé lisible */
+}
+
+.container-bio { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    gap: 80px; 
+    align-items: center; 
+}
+
+.bio-text { 
+    flex: 1.2; /* Le texte prend un peu plus de place */
+}
+
+.bio-img { 
+    flex: 0.8; /* La photo vient se caler dans le vide à droite */
+}
+
+.bio-img img { 
+    width: 100%; 
+    border-radius: 2px; 
+    box-shadow: 20px 20px 0 var(--beige-sable); 
+}
+
+.tagline { 
+    color: var(--couleur-principale); 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    font-size: 0.8rem; 
+    display: block; 
+    margin-bottom: 15px;
+}
+
+.skills { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; 
+    margin-top: 35px; 
+}
+
+.skill { 
+    font-weight: 700; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    border-left: 3px solid var(--couleur-principale); 
+    padding-left: 12px; 
+}
+/* OFFRES & ICONES */
+.offres { padding: 120px 5%; background: var(--noir-graphite); color: white; }
+.grid-offres { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1200px; margin: 60px auto 0; }
+/* SECTION OFFRES : Centrage et Impact visuel */
+.card-offre { 
+    background: rgba(255,255,255,0.03); 
+    padding: 60px 45px; 
+    border: 1px solid rgba(255,255,255,0.1); 
+    transition: var(--transition-smooth);
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; /* Centre tes "carrés" internes horizontalement */
+    text-align: center;   /* Aligne tes textes au milieu */
+}
+
+.icon-offre { 
+    width: 80px; /* Taille augmentée pour Alexandra */
+    height: auto; 
+    margin-bottom: 30px; 
+    display: block; 
+    transition: var(--transition-smooth);
+    filter: drop-shadow(0 0 10px rgba(0, 149, 246, 0.2)); /* Lueur subtile */
+}
+.card-offre:hover .icon-offre { transform: translateY(-5px) scale(1.1); }
+
+.btn-action { 
+    display: block; width: 100%; padding: 20px; text-align: center; 
+    background: white; color: var(--noir-graphite); text-decoration: none; 
+    font-weight: 900; text-transform: uppercase; transition: var(--transition-smooth); 
+}
+.btn-action:hover { background: var(--couleur-principale); color: white; box-shadow: 0 10px 20px rgba(0, 149, 246, 0.4); }
+
+footer { padding: 80px 5%; background: black; text-align: center; color: white; }
+/* STYLE DU FOOTER FINAL */
+footer {
+    padding: 80px 5%;
+    background: #000000;
+    text-align: center;
+    color: white;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: var(--transition-smooth);
+}
+
+footer a:hover {
+    color: var(--couleur-principale);
+    text-decoration: underline;
+}
+/* --- SECTION STATS PIMPÉE --- */
+.stats-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 100px 5%;
+    background: #0a0b0d; 
+    border-top: 1px solid rgba(0, 149, 246, 0.2);
+    border-bottom: 1px solid rgba(0, 149, 246, 0.2);
+    flex-wrap: wrap; 
+    gap: 30px;
+} /* <-- J'ai ajouté cette accolade qui manquait */
+
+.stat-item {
+    text-align: center;
+    min-width: 200px;
+}
+
+.stat-number {
+    font-size: clamp(3rem, 6vw, 5rem); 
+    font-weight: 900;
+    color: var(--couleur-principale); 
+    text-shadow: 0 0 30px rgba(0, 149, 246, 0.4); 
+    line-height: 1;
+}
+
+.suffix {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 300;
+}
+
+.stat-item p {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 15px;
+}
+
+/* BARRE DE PROGRESSION HAUT DE PAGE */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%; /* Elle commence à zéro */
+    height: 4px;
+    background: #0095f6; /* Ton bleu signature */
+    z-index: 10001; /* Doit être au-dessus du header */
+    box-shadow: 0 0 10px rgba(0, 149, 246, 0.5);
+    transition: width 0.1s ease-out;
+}
